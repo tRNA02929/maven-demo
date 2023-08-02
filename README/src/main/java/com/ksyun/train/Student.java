@@ -1,4 +1,4 @@
-package org.example;
+package com.ksyun.train;
 
 
 import lombok.Builder;
