@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>README</module>
+        <module>zk-test</module>
     </modules>
 
     <properties>
@@ -98,6 +99,12 @@
                 <version>4.4</version>
             </dependency>
             <!--Apache Commons-->
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>3.7.0</version>
+            </dependency>
 
             <!--        <dependency>-->
             <!--            <groupId>org.springframework.cloud</groupId>-->
