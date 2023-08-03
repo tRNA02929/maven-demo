@@ -1,10 +1,12 @@
 package com.ksyun.train;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+@Slf4j
 @SpringBootApplication
 public class MySpringApplication implements DisposableBean {
 
@@ -15,6 +17,6 @@ public class MySpringApplication implements DisposableBean {
 
     @Override
     public void destroy() {
-        System.out.println("destroy");
+        log.info("destroy spring application");
     }
 }
