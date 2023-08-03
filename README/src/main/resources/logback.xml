@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} | %5p | %c{0} | %thread | %m%n"/>
+    <property name="INFO_LOG_PATTERN" value="%d%n"/>
 
-    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="infoConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder charset="UTF-8">
-            <pattern>${LOG_PATTERN}</pattern>
+            <pattern>%green(%d{yyyy-MM-dd HH:mm:ss.SSS}) | %5p | %blue(%c{0}) | %yellow(%m) %n</pattern>
         </encoder>
     </appender>
 
-    <logger name="com.ksyun.train" level="info"/>
+    <appender name="errorConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="UTF-8">
+            <pattern>%red(%d{yyyy-MM-dd HH:mm:ss.SSS} | %5p | %c{0} | %m) %n</pattern>
+        </encoder>
+    </appender>
 
-    <logger name="dao" level="debug">
+    <logger name="com.ksyun.train.controller.TestApiController" level="trace" additivity="false">
+        <appender-ref ref="infoConsoleAppender" level="info"/>
+        <appender-ref ref="errorConsoleAppender" level="error"/>
     </logger>
 
-    <root level="info">
-        <appender-ref ref="consoleAppender"/>
+    <root level="info" additivity="false">
+        <appender-ref ref="infoConsoleAppender"/>
     </root>
 </configuration>
