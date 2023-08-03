@@ -2,6 +2,34 @@
 
 test: 🤡
 [测试gitc插件](http://120.92.88.48/libo14/libo14-test)
+---
+### commit message前缀
+
+```
+提交规则：
+
+feature或feat:新功能
+add : 新增相关内容
+fix:修复bug
+docs:文档添加、修改，如README, CHANGELOG。
+style:格式（不影响代码运行的变动,如格式化，缩进等）
+refactor:重构（即不是新增功能，也不是修改bug的代码变动）
+test:增加测试
+chore:构建过程或辅助工具的变动(如package.sh)
+deps:依赖变更（比如guava版本变更)
+revert:撤销以前的commit(必须写清楚)
+log:增加、调整log输出等
+perf:性能优化
+config:配置文件修改（如第三方接口url调整）
+remove:移除
+experience:体验优化
+ui:纯粹CSS样式变动，不影响功能代码
+other:其他原因，如上述不能覆盖，才用。如：合并代码，解决代码冲突等
+
+eg：
+refactor：优化调用链
+```
+
 
 ---
 
