@@ -4,4 +4,7 @@ server:
 spring:
   application:
     name: myapp
-
+logging:
+  level:
+    web: info
+    root: info

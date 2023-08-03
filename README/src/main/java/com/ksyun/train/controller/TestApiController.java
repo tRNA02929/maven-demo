@@ -24,7 +24,7 @@ public class TestApiController {
 
     @RequestMapping("/2")
     public Object hello2() {
-//        log.error("hello world 2");
+        log.error("hello world 2");
         return "hello world 2";
     }
 
