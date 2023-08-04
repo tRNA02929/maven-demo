@@ -4,7 +4,7 @@
     <formats>
         <format>zip</format>
     </formats>
-    <includeBaseDirectory>false</includeBaseDirectory>
+    <includeBaseDirectory>true</includeBaseDirectory>
 
     <!-- 将第三方依赖打包到lib目录中 -->
     <dependencySets>
