@@ -28,6 +28,14 @@
             <useDefaultExcludes>true</useDefaultExcludes>
         </fileSet>
         <fileSet>
+            <outputDirectory>conf</outputDirectory>
+            <directory>src/conf</directory>
+            <fileMode>0666</fileMode>
+            <lineEnding>unix</lineEnding>
+            <filtered>true</filtered>
+            <useDefaultExcludes>true</useDefaultExcludes>
+        </fileSet>
+        <fileSet>
             <outputDirectory>resources</outputDirectory>
             <directory>src/main/resources</directory>
             <fileMode>0644</fileMode>
