@@ -26,3 +26,7 @@ nohup java -jar $base_dir/netcutApi.jar --spring.application.name=nca1 --server.
 nohup java -jar $base_dir/netcutApi.jar --spring.application.name=nca2 --server.port=8082 >$base_dir/log/nca2.log 2>&1 &
 nohup java -jar $base_dir/netcutApi.jar --spring.application.name=nca3 --server.port=8083 >$base_dir/log/nca3.log 2>&1 &
 echo "netcutApi.jar is started"
+
+# 启动nginx
+nginx -s stop
+nginx -c $base_dir/conf/nginx.conf

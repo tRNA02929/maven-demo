@@ -13,3 +13,6 @@ if [ -n "$pid2" ]; then
   kill -9 $pid2
 fi
 echo "netcutApi.jar is stopped"
+
+# 关闭nginx
+nginx -s stop
