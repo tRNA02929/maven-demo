@@ -9,9 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>README</module>
-        <module>zk-test</module>
-        <module>netcutApi</module>
+<!--        <module>README</module>-->
+<!--        <module>zk-test</module>-->
+        <module>kryo-test</module>
+        <!--        <module>netcutApi</module>-->
     </modules>
 
     <properties>
@@ -102,9 +103,21 @@
             <!--Apache Commons-->
 
             <dependency>
-                <groupId>org.apache.zookeeper</groupId>
-                <artifactId>zookeeper</artifactId>
-                <version>3.7.0</version>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>2.12.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-test</artifactId>
+                <version>2.12.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>4.0.0</version>
             </dependency>
 
             <!--        <dependency>-->
