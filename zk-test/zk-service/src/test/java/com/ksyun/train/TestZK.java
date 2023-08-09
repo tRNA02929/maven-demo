@@ -24,7 +24,9 @@ public class TestZK {
     @Autowired
     private PropertiesConf propertiesConf;
 
-    private static final String ZK_ADDR = "localhost:2181";
+//    private static final String ZK_ADDR = "localhost:2181";
+    // 使用远程的ZK
+    private static final String ZK_ADDR = "hot:80";
 
     @Test
     public void testGet() throws Exception {
