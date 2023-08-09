@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
     <modules>
 <!--        <module>README</module>-->
-<!--        <module>zk-test</module>-->
-        <module>kryo-test</module>
+        <module>zk-test</module>
+<!--        <module>kryo-test</module>-->
         <!--        <module>netcutApi</module>-->
     </modules>
 
