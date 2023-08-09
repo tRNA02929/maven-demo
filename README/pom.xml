@@ -36,4 +36,17 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>${artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.ksyun.train.MySpringApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
