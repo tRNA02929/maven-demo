@@ -1,21 +1,17 @@
 package com.ksyun.train;
 
+import com.google.common.collect.Lists;
 import com.ksyun.train.conf.PropertiesConf;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
-import org.apache.curator.framework.recipes.cache.*;
 import org.apache.curator.retry.RetryNTimes;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Component
 @Import(PropertiesConf.class)
@@ -24,23 +20,26 @@ public class TestZK {
     @Autowired
     private PropertiesConf propertiesConf;
 
-//    private static final String ZK_ADDR = "localhost:2181";
+    //    private static final String ZK_ADDR = "localhost:2181";
     // 使用远程的ZK
     private static final String ZK_ADDR = "hot:80";
 
     @Test
-    public void testGet() throws Exception {
+    public void testGet() {
         CuratorFramework client = CuratorFrameworkFactory.newClient(
                 ZK_ADDR,
                 new RetryNTimes(10, 5000));
         client.start();
+        List<String> list;
         try {
-            List<String> list = client.getChildren().forPath("/libo13/1");
+            list = client.getChildren().forPath("/");
             System.out.println(list);
         } catch (Exception e) {
+            list = Lists.newArrayList();
             System.out.println("no node");
         }
         client.close();
+        list.forEach(System.out::println);
     }
 
     @Test
@@ -51,7 +50,11 @@ public class TestZK {
         client.start();
         try {
             client.create().forPath("/libo14", "hello".getBytes());
+            System.out.println("create node");
         } catch (Exception e) {
+            System.out.println(System.currentTimeMillis());
+            client.setData().forPath("/libo14", "hello".getBytes());
+            System.out.println(System.currentTimeMillis());
             System.out.println("node exists");
         }
         client.close();
