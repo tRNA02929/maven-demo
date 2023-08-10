@@ -27,11 +27,12 @@ public class TestKryo {
     @Test
     public void testKryoOut() {
         TestKryoBean bean = TestKryoBean.builder().name("zhangsan").age(18).address("beijing").build();
+        String str = "hello world";
         try (FileOutputStream fos = new FileOutputStream("src\\test\\resources\\Kryo.bin");
              Output output = new Output(fos)) {
-            kryo.writeObject(output, bean);
+//            System.out.println(output.toBytes());
+            kryo.writeObject(output, str);
 //            kryo.writeClassAndObject(output, bean);
-            output.flush();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -47,5 +48,15 @@ public class TestKryo {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @Test
+    public void test2() {
+        String str = "hello";
+        Output output = new Output(str.getBytes());
+        Input input = new Input(str.getBytes());
+        System.out.println(new String(str.getBytes()));
+        System.out.println(new String(output.getBuffer()));
+        System.out.println(new String(input.getBuffer()));
     }
 }

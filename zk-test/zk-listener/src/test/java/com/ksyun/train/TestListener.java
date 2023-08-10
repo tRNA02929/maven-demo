@@ -3,13 +3,18 @@ package com.ksyun.train;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryNTimes;
+import org.apache.curator.utils.CloseableUtils;
 import org.junit.Test;
 import org.apache.curator.framework.recipes.cache.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Stream;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import static org.apache.curator.framework.imps.CuratorFrameworkState.STOPPED;
+import static org.apache.curator.framework.recipes.cache.TreeCacheEvent.Type.INITIALIZED;
 
 public class TestListener {
 
@@ -36,7 +41,15 @@ public class TestListener {
         List<TreeCacheEvent> events = new ArrayList<>();
         List<CuratorFramework> clients = new ArrayList<>();
         List<Long> times = new ArrayList<>();
+        AtomicBoolean init = new AtomicBoolean(false);
         treeCache.getListenable().addListener((client1, event) -> {
+            if (event.getType() == INITIALIZED) {
+                init.set(true);
+                return;
+            }
+            if (!init.get()) {
+                return;
+            }
             clients.add(client1);
             events.add(event);
             times.add(System.currentTimeMillis());
@@ -52,9 +65,10 @@ public class TestListener {
 
         treeCache.close();
         client.close();
+        CloseableUtils.closeQuietly(treeCache);
 
         System.out.println("events: " + events.size());
-        clients.stream().forEach(System.out::println);
+        clients.stream().forEach(c -> System.out.println(c.getNamespace()));
         System.out.println("====================================");
         events.stream().forEach(event -> {
             System.out.println("event: " + event.getType());
