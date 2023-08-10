@@ -2,19 +2,18 @@ package com.ksyun.train;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.imps.CuratorFrameworkState;
+import org.apache.curator.framework.recipes.cache.ChildData;
+import org.apache.curator.framework.recipes.cache.TreeCache;
+import org.apache.curator.framework.recipes.cache.TreeCacheEvent;
 import org.apache.curator.retry.RetryNTimes;
 import org.apache.curator.utils.CloseableUtils;
 import org.junit.Test;
-import org.apache.curator.framework.recipes.cache.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import static org.apache.curator.framework.imps.CuratorFrameworkState.STOPPED;
-import static org.apache.curator.framework.recipes.cache.TreeCacheEvent.Type.INITIALIZED;
 
 public class TestListener {
 
@@ -37,13 +36,13 @@ public class TestListener {
                 ZK_ADDR,
                 new RetryNTimes(10, 5000));
         client.start();
-        TreeCache treeCache = new TreeCache(client, "/");
+        TreeCache treeCache = new TreeCache(client, "/libo14");
         List<TreeCacheEvent> events = new ArrayList<>();
         List<CuratorFramework> clients = new ArrayList<>();
         List<Long> times = new ArrayList<>();
         AtomicBoolean init = new AtomicBoolean(false);
         treeCache.getListenable().addListener((client1, event) -> {
-            if (event.getType() == INITIALIZED) {
+            if (event.getType() == TreeCacheEvent.Type.INITIALIZED) {
                 init.set(true);
                 return;
             }
@@ -58,14 +57,17 @@ public class TestListener {
                     .map(ChildData::getData)
                     .map(String::new)
                     .orElse("null"));
+            if (event.getType().equals(TreeCacheEvent.Type.NODE_REMOVED)) {
+                treeCache.close();
+                client.close();
+                CloseableUtils.closeQuietly(treeCache);
+            }
         });
         treeCache.start();
 
-        Thread.sleep(10000);
-
-        treeCache.close();
-        client.close();
-        CloseableUtils.closeQuietly(treeCache);
+        while (!client.getState().equals(CuratorFrameworkState.STOPPED)) {
+            Thread.sleep(1000);
+        }
 
         System.out.println("events: " + events.size());
         clients.stream().forEach(c -> System.out.println(c.getNamespace()));

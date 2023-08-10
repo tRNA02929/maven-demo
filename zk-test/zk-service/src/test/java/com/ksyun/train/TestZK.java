@@ -5,6 +5,7 @@ import com.ksyun.train.conf.PropertiesConf;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.RetryNTimes;
+import org.apache.zookeeper.CreateMode;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
@@ -44,18 +45,22 @@ public class TestZK {
     }
 
     @Test
-    public void testCreate() throws Exception {
+    public void testCreate() {
         CuratorFramework client = CuratorFrameworkFactory.newClient(
                 ZK_ADDR,
                 new RetryNTimes(10, 5000));
         client.start();
         try {
-            client.create().forPath("/libo14", "hello".getBytes());
-            System.out.println("create node");
+            if (client.checkExists().forPath("/libo14") == null) {
+                client.create().withMode(CreateMode.EPHEMERAL).forPath("/libo14", "hello".getBytes());
+                System.out.println("create node");
+            } else {
+                System.out.println(System.currentTimeMillis());
+                client.setData().forPath("/libo14", "hello".getBytes());
+                System.out.println(System.currentTimeMillis());
+                System.out.println("node exists");
+            }
         } catch (Exception e) {
-            System.out.println(System.currentTimeMillis());
-            client.setData().forPath("/libo14", "hello".getBytes());
-            System.out.println(System.currentTimeMillis());
             System.out.println("node exists");
         }
         client.close();
