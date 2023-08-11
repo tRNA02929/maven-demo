@@ -18,10 +18,6 @@ import java.util.stream.Stream;
 @Component
 @Import(PropertiesConf.class)
 public class TestZK {
-
-    @Autowired
-    private PropertiesConf propertiesConf;
-
     private static final String ZK_ADDR = "hot:80";
 
     @Test
