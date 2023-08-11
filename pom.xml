@@ -9,9 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-<!--        <module>README</module>-->
+        <!--        <module>README</module>-->
         <module>zk-test</module>
-<!--        <module>kryo-test</module>-->
+        <!--        <module>kryo-test</module>-->
         <!--        <module>netcutApi</module>-->
     </modules>
 
@@ -130,4 +130,29 @@
             <!--        </dependency>-->
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!--javadoc 插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <charset>UTF-8</charset>
+                    <docencoding>UTF-8</docencoding>
+                    <source>1.8</source>
+                    <docfilessubdirs>true</docfilessubdirs>
+                    <useStandardDocletOptions>true</useStandardDocletOptions>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                    <quiet>true</quiet>
+                    <detectJavaApiLink>true</detectJavaApiLink>
+                    <detectLinks>true</detectLinks>
+                    <detectOfflineLinks>true</detectOfflineLinks>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
