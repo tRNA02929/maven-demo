@@ -60,23 +60,4 @@ public class TestZK {
         client.close();
     }
 
-    @Test
-    public void testListener() throws Exception {
-        CuratorFramework client = CuratorFrameworkFactory.newClient(
-                ZK_ADDR,
-                new RetryNTimes(10, 5000));
-        client.start();
-
-        try {
-            client.create().forPath("/libo14", "hello".getBytes());
-        } catch (Exception e) {
-            System.out.println("node exists");
-        }
-        System.out.println("create node");
-        client.setData().forPath("/libo14", "hello2".getBytes());
-        client.setData().forPath("/libo14/1", "hello3".getBytes());
-//        client.delete().forPath("/libo14");
-
-        client.close();
-    }
 }
