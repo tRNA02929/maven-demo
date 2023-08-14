@@ -13,7 +13,7 @@
         <!--        <module>zk-test</module>-->
 <!--        <module>FileTest</module>-->
         <module>akka-test</module>
-        <module>thrift-test</module>
+<!--        <module>thrift-test</module>-->
         <!--        <module>kryo-test</module>-->
         <!--        <module>netcutApi</module>-->
     </modules>
@@ -165,7 +165,7 @@
             <!--akka-->
             <dependency>
                 <groupId>com.typesafe.akka</groupId>
-                <artifactId>akka-remote_2.12</artifactId>
+                <artifactId>akka-remote_2.13</artifactId>
                 <version>2.5.32</version>
             </dependency>
 
