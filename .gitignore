@@ -5,6 +5,7 @@ target/
 
 ### TEST ###
 #*/src/test/
+*.txt
 
 ### IntelliJ IDEA ###
 .idea/
