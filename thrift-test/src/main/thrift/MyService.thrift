@@ -1,4 +1,4 @@
-namespace java com.ksc.thrift
+namespace java com.ksyun.train.thrift
 
 
 struct HelloMsg {
