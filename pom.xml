@@ -9,9 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-<!--                <module>README</module>-->
-<!--        <module>zk-test</module>-->
+        <!--                <module>README</module>-->
+        <!--        <module>zk-test</module>-->
         <module>FileTest</module>
+        <module>akka-test</module>
         <!--        <module>kryo-test</module>-->
         <!--        <module>netcutApi</module>-->
     </modules>
@@ -103,6 +104,7 @@
             </dependency>
             <!--Apache Commons-->
 
+            <!--Apache Curator-->
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-recipes</artifactId>
@@ -121,14 +123,51 @@
                 <version>4.0.0</version>
             </dependency>
 
-            <!--        <dependency>-->
-            <!--            <groupId>org.springframework.cloud</groupId>-->
-            <!--            <artifactId>spring-cloud-starter-eureka-server</artifactId>-->
-            <!--        </dependency>-->
-            <!--        <dependency>-->
-            <!--            <groupId>org.springframework.cloud</groupId>-->
-            <!--            <artifactId>spring-cloud-starter-eureka</artifactId>-->
-            <!--        </dependency>-->
+            <!-- grpc -->
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty-shaded</artifactId>
+                <version>1.55.3</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-protobuf</artifactId>
+                <version>1.55.3</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-stub</artifactId>
+                <version>1.55.3</version>
+            </dependency>
+
+            <!-- thrift -->
+            <dependency>
+                <groupId>org.apache.thrift</groupId>
+                <artifactId>libthrift</artifactId>
+                <version>0.14.2</version>
+            </dependency>
+
+            <!-- netty -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.66.Final</version>
+            </dependency>
+
+            <!-- cglib proxy -->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+
+            <!--akka-->
+            <dependency>
+                <groupId>com.typesafe.akka</groupId>
+                <artifactId>akka-remote_2.12</artifactId>
+                <version>2.5.32</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

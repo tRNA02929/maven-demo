@@ -1,15 +1,15 @@
 package com.ksyun.train;
 
-import com.google.common.collect.Lists;
 import com.google.common.io.Files;
 import lombok.*;
-import org.apache.commons.collections4.ListUtils;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 
 
 @Getter
@@ -62,8 +62,6 @@ public class FileTest {
 
     @Test
     public void test() throws UnsupportedEncodingException {
-        byte[] bytes = "你好world".getBytes();
-        System.out.println(new String("你好world".getBytes()));
-        System.out.println(URLEncoder.encode("你好world", "utf-8"));
+        System.out.println(System.getProperty("java.io.tmpdir"));
     }
 }
