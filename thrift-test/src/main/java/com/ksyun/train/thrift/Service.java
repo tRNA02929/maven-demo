@@ -423,7 +423,9 @@ public class Service {
         private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new sayHello_argsTupleSchemeFactory();
 
 
-        /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+        /**
+         * The set of fields this struct contains, along with convenience methods for finding and manipulating them.
+         */
         public enum _Fields implements org.apache.thrift.TFieldIdEnum {
             ;
 
@@ -524,7 +526,9 @@ public class Service {
             throw new java.lang.IllegalStateException();
         }
 
-        /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+        /**
+         * Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise
+         */
         @Override
         public boolean isSet(_Fields field) {
             if (field == null) {
@@ -693,7 +697,9 @@ public class Service {
 
         public @org.apache.thrift.annotation.Nullable HelloMsg success; // required
 
-        /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+        /**
+         * The set of fields this struct contains, along with convenience methods for finding and manipulating them.
+         */
         public enum _Fields implements org.apache.thrift.TFieldIdEnum {
             SUCCESS((short) 0, "success");
 
@@ -809,7 +815,9 @@ public class Service {
             this.success = null;
         }
 
-        /** Returns true if field success is set (has been assigned a value) and false otherwise */
+        /**
+         * Returns true if field success is set (has been assigned a value) and false otherwise
+         */
         public boolean isSetSuccess() {
             return this.success != null;
         }
@@ -845,7 +853,9 @@ public class Service {
             throw new java.lang.IllegalStateException();
         }
 
-        /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+        /**
+         * Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise
+         */
         @Override
         public boolean isSet(_Fields field) {
             if (field == null) {
@@ -1076,7 +1086,9 @@ public class Service {
 
         public @org.apache.thrift.annotation.Nullable MyRequestMsg request; // required
 
-        /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+        /**
+         * The set of fields this struct contains, along with convenience methods for finding and manipulating them.
+         */
         public enum _Fields implements org.apache.thrift.TFieldIdEnum {
             REQUEST((short) 1, "request");
 
@@ -1192,7 +1204,9 @@ public class Service {
             this.request = null;
         }
 
-        /** Returns true if field request is set (has been assigned a value) and false otherwise */
+        /**
+         * Returns true if field request is set (has been assigned a value) and false otherwise
+         */
         public boolean isSetRequest() {
             return this.request != null;
         }
@@ -1228,7 +1242,9 @@ public class Service {
             throw new java.lang.IllegalStateException();
         }
 
-        /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+        /**
+         * Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise
+         */
         @Override
         public boolean isSet(_Fields field) {
             if (field == null) {
@@ -1460,7 +1476,9 @@ public class Service {
 
         public @org.apache.thrift.annotation.Nullable MyResponseMsg success; // required
 
-        /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+        /**
+         * The set of fields this struct contains, along with convenience methods for finding and manipulating them.
+         */
         public enum _Fields implements org.apache.thrift.TFieldIdEnum {
             SUCCESS((short) 0, "success");
 
@@ -1576,7 +1594,9 @@ public class Service {
             this.success = null;
         }
 
-        /** Returns true if field success is set (has been assigned a value) and false otherwise */
+        /**
+         * Returns true if field success is set (has been assigned a value) and false otherwise
+         */
         public boolean isSetSuccess() {
             return this.success != null;
         }
@@ -1612,7 +1632,9 @@ public class Service {
             throw new java.lang.IllegalStateException();
         }
 
-        /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+        /**
+         * Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise
+         */
         @Override
         public boolean isSet(_Fields field) {
             if (field == null) {
