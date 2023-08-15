@@ -30,6 +30,7 @@ public class ServerApp {
         ActorSystem system = ActorSystem.create("ServerSystem", config);
 
         Http http = Http.get(system);
+//        http.connectionTo("localhost");
 
         ActorRef serverActorRef = system.actorOf(Props.create(ServerActor.class), "ServerActor");
         System.out.println("ServerActor started at: " + serverActorRef.path().toString());
