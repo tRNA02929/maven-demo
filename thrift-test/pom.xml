@@ -22,6 +22,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+        </dependency>
+
         <!-- thrift -->
         <dependency>
             <groupId>org.apache.thrift</groupId>
