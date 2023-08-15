@@ -1,6 +1,5 @@
 package com.ksyun.test;
 
-
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoException;
 import com.esotericsoftware.kryo.io.Input;
@@ -18,7 +17,6 @@ public class ServiceImpl implements Service.Iface {
 
     // 已登录用户
     private ConcurrentHashMap<String, String> tokenMap = new ConcurrentHashMap<>();
-
 
     public ServiceImpl() {
         // 初始化用户

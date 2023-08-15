@@ -18,7 +18,8 @@ public class TestServer {
             // 使用特定的序列化协议
             TProtocolFactory protocolFactory = new TBinaryProtocol.Factory();
             // 创建并启动Thrift服务器
-            TServer server = new TSimpleServer(new TServer.Args(serverSocket).processor(processor).protocolFactory(protocolFactory));
+            TServer server = new TSimpleServer(
+                    new TServer.Args(serverSocket).processor(processor).protocolFactory(protocolFactory));
             System.out.println("Server started on port 9091...");
             server.serve();
             service.save();
