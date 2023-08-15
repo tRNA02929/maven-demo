@@ -21,6 +21,7 @@ public class ServiceImpl implements Service.Iface {
         response.setStatus(true);
         response.setNo(request.getNo());
         response.setMsg("Server received message: " + request.getMsg());
+        System.out.println("Server received message: " + request.getMsg());
         return response;
     }
 }
