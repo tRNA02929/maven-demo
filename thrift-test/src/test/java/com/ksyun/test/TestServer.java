@@ -8,7 +8,7 @@ import org.apache.thrift.server.TSimpleServer;
 import org.apache.thrift.transport.TServerSocket;
 
 public class TestServer {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         try {
             ServiceImpl service = new ServiceImpl();
             // 创建Service的处理器，并关联到ServiceImpl的实现。
