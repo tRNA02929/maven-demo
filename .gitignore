@@ -6,6 +6,7 @@ target/
 ### TEST ###
 #*/src/test/
 *.txt
+dataset/
 
 ### IntelliJ IDEA ###
 .idea/
