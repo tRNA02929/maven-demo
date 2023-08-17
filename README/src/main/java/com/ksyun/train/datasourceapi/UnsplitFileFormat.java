@@ -23,7 +23,15 @@ public class UnsplitFileFormat implements FileFormat {
             File[] files = file.listFiles();
             for (File f : files) {
                 //todo
-                ;
+                try (FileReader fr = new FileReader(file);
+                     BufferedReader br = new BufferedReader(fr)) {
+                    String line = null;
+                    while ((line = br.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         return partiongFileList.toArray(new PartionFile[partiongFileList.size()]);
