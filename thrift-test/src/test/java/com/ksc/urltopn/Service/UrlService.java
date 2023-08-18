@@ -11,7 +11,8 @@ import java.util.List;
 public class UrlService implements UrlTopNService.Iface {
     @Override
     public UrlTopNAppResponse submitApp(UrlTopNAppRequest urlTopNAppRequest) throws TException {
-        return null;
+        UrlTopNAppResponse urlTopNAppResponse = new UrlTopNAppResponse(urlTopNAppRequest.applicationId, 0);
+        return urlTopNAppResponse;
     }
 
     @Override

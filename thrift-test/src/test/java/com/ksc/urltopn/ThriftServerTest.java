@@ -2,8 +2,6 @@ package com.ksc.urltopn;
 
 import com.ksc.urltopn.Service.UrlService;
 import com.ksc.urltopn.thrift.UrlTopNService;
-import com.ksyun.train.thrift.Service;
-import com.ksyun.train.thrift.service.ServiceImpl;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocolFactory;
 import org.apache.thrift.server.TServer;
