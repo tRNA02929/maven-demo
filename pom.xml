@@ -15,6 +15,7 @@
         <!--        <module>akka-test</module>-->
                 <module>thrift-test</module>
                 <module>kryo-test</module>
+        <module>avro</module>
         <!--        <module>netcutApi</module>-->
     </modules>
 
@@ -122,6 +123,11 @@
                 <groupId>com.esotericsoftware</groupId>
                 <artifactId>kryo</artifactId>
                 <version>4.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>1.11.0</version>
             </dependency>
 
             <!-- grpc -->

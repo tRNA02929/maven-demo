@@ -3,7 +3,7 @@ package com.ksyun.train;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.ksyun.train.Entity.KryoBean;
+import com.ksyun.train.entity.KryoBean;
 import org.junit.Test;
 
 import java.io.FileInputStream;
@@ -13,7 +13,8 @@ public class TestKryo {
     private static final Kryo kryo = new Kryo();
 
     @Test
-    public void testKryoOut() {
+    public void testKryoOut() throws InterruptedException {
+        kryo.register(KryoBean.class);
         KryoBean[] beans = new KryoBean[3];
         beans[0] = KryoBean.builder().name("zhangsan").age(18).address("beijing").build();
         beans[1] = KryoBean.builder().name("lisi").age(19).address("shanghai").build();
@@ -27,6 +28,7 @@ public class TestKryo {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        Thread.sleep(1000);
     }
 
     @Test

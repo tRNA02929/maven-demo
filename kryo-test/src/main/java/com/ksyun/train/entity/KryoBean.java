@@ -1,4 +1,4 @@
-package com.ksyun.train.Entity;
+package com.ksyun.train.entity;
 
 import lombok.*;
 

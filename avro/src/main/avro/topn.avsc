@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "TopN",
+  "namespace": "com.ksyun.train.schema",
+  "fields": [
+    {
+      "name": "key",
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "type": "int"
+    }
+  ]
+}
