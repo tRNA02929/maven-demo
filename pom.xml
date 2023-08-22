@@ -13,8 +13,8 @@
         <!--        <module>zk-test</module>-->
         <!--        <module>FileTest</module>-->
         <!--        <module>akka-test</module>-->
-        <module>thrift-test</module>
-        <module>kryo-test</module>
+        <!--        <module>thrift-test</module>-->
+        <!--        <module>kryo-test</module>-->
         <module>avro</module>
         <!--        <module>netcutApi</module>-->
     </modules>
