@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: readme-app
+
+logging:
+  level:
+    web: info
+    root: info
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
