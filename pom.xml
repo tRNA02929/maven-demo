@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>README</module>
+        <module>perfect-array</module>
         <!--        <module>zk-test</module>-->
         <!--        <module>FileTest</module>-->
         <!--        <module>akka-test</module>-->
