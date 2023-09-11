@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class PerfectArr {
+public class PerfectArrTest {
     static int max = 0;
     static String result = "";
     static List<String> resultList = new ArrayList<>();
