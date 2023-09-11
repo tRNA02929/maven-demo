@@ -1,3 +1,8 @@
+/**
+ * 判断两个字符串的“交集”，例如abc和bc的交集是bc，abcd和cda的交集是cd，abcd和bc的交集为空，
+ * 需要计算的交集必须是有序的，必须以前一个字符串的最后一位结束，以后一个字符串的第一位开始
+ */
+
 package com.ksyun.test;
 
 import org.junit.Test;
