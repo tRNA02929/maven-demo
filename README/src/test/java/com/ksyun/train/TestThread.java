@@ -1,7 +1,6 @@
 package com.ksyun.train;
 
 import lombok.*;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ConcurrentSkipListSet;
 
@@ -16,8 +15,8 @@ class People implements Comparable<People> {
     private String sex;
 
     @Override
-    public int compareTo(@NotNull People o) {
-        if(equals(o))
+    public int compareTo(People o) {
+        if (equals(o))
             return 0;
         return age - o.age;
     }
