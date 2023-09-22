@@ -7,15 +7,12 @@ package net.hot;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class PerfectArr {
     static int max = 0;
     static String result = "";
-    static List<String> resultList = new ArrayList<>();
+    static List<String> resultList;
     static int n, m;
     static int[] arr;
 
@@ -73,9 +70,12 @@ public class PerfectArr {
         if (sum > max) {
             max = sum;
             result = last;
-        } else if (sum == max && last.length() < result.length()) {
-            result = last;
+            resultList = new ArrayList<>();
+        } else if (sum == max) {
+            if (last.length() < result.length())
+                result = last;
         }
+        resultList.add(last);
     }
 
     public static int[] change(int[] arr, String str) {
